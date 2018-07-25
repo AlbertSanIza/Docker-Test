@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aspdotnetcore-api", "aspdotnetcore-api\aspdotnetcore-api.csproj", "{39FD4F4D-4AAD-442D-987F-A7CDAD1F7378}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dockerTestApi", "dockerTestApi\dockerTestApi.csproj", "{B7EC6298-6588-470D-9C5A-D71D75EA9C25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{39FD4F4D-4AAD-442D-987F-A7CDAD1F7378}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{39FD4F4D-4AAD-442D-987F-A7CDAD1F7378}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{39FD4F4D-4AAD-442D-987F-A7CDAD1F7378}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{39FD4F4D-4AAD-442D-987F-A7CDAD1F7378}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7EC6298-6588-470D-9C5A-D71D75EA9C25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7EC6298-6588-470D-9C5A-D71D75EA9C25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7EC6298-6588-470D-9C5A-D71D75EA9C25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7EC6298-6588-470D-9C5A-D71D75EA9C25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {BFCF5955-1AEA-4F6B-AFD2-6CEACCDCD052}
+		SolutionGuid = {2B85AE80-EAFF-430D-BA89-04DF025816C4}
 	EndGlobalSection
 EndGlobal

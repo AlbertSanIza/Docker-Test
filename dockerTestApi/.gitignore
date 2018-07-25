@@ -34,4 +34,3 @@ bld/
 # NUNIT
 *.VisualState.xml
 TestResult.xml
-*.cache
