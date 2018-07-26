@@ -23,9 +23,7 @@ class App extends Component {
             <br/>
             <button onClick={this.handleOnClick}>Fetch Random Name</button>
             <ul className="App-list">
-            {this.state.apiList.map((y, z) => (
-                <li key="{z}">{y}</li>
-            ))}
+            {this.state.apiList.map((y, z) => <li key={z}>{z} - {y}</li>)}
             </ul>
             </div>
         )
