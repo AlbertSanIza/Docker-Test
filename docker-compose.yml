@@ -3,7 +3,7 @@ services:
     web:
         image: react-app-prod
         deploy:
-            replicas: 5
+            replicas: 2
             restart_policy:
                 condition: on-failure
             resources:
