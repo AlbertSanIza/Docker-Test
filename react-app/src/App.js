@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 import logo from './logo.svg'
 import './App.css'
 
@@ -10,7 +11,7 @@ class App extends Component {
         }
     }
     handleOnClick = e => {
-        
+        axios.get(':4000/api/values').then(response => console.log(response))
     }
     render() {
         return (
