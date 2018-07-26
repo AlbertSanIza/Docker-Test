@@ -7,13 +7,13 @@ class App extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            apiList: ["hola", "como"]
+            apiList: []
         }
     }
     handleOnClick = e => {
-        axios.get(':4000/api/values').then(response => console.log(response))
+        axios.get('http://api:4000/api/values').then(response => {
             console.log(response)
-            this.setState({apiList: this.state.apiList.push(response.data)})
+            this.setState({apiList: this.state.apiList.push(response.data[0])})
         })
     }
     render() {
