@@ -9,11 +9,14 @@ namespace dockerTestApi.Controllers
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+        string[] names = new string[] {"ALBERT", "WILL", "BOB", "JACKIE", "ANDREA"};
+        string[] lastNames = new string[] {"JOBS", "MUSK", "PICHAI", "BEZOS", "ZUCKERBERG"};
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            Random rnd = new Random();
+            return new string[] { names[rnd.Next(5)] + " " + lastNames[rnd.Next(5)] };
         }
 
         // GET api/values/5
