@@ -1,4 +1,4 @@
-FROM node:9.6.1
+FROM node:latest
 RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
 ADD . /usr/src/app
