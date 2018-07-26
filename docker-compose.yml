@@ -14,5 +14,16 @@ services:
             - "3000:80"
         networks:
             - webnet
+    visualizer:
+        image: dockersamples/visualizer:stable
+        deploy:
+            placement:
+                constraints: [node.role == manager]
+        ports:
+            - "8080:8080"
+        networks:
+            - webnet
+        volumes:
+            - "/var/run/docker.sock:/var/run/docker.sock"
 networks:
     webnet:
