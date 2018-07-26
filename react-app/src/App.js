@@ -9,6 +9,9 @@ class App extends Component {
             apiList: ["hola", "como"]
         }
     }
+    handleOnClick = e => {
+        
+    }
     render() {
         return (
             <div className="App">
@@ -16,6 +19,8 @@ class App extends Component {
             <img src={logo} className="App-logo" alt="logo" />
             <h1 className="App-title">Welcome to React</h1>
             </header>
+            <br/>
+            <button onClick={this.handleOnClick}>Fetch Random Name</button>
             <ul className="App-list">
             {this.state.apiList.map((y, z) => (
                 <li key="{z}">{y}</li>
