@@ -12,6 +12,9 @@ class App extends Component {
     }
     handleOnClick = e => {
         axios.get(':4000/api/values').then(response => console.log(response))
+            console.log(response)
+            this.setState({apiList: this.state.apiList.push(response.data)})
+        })
     }
     render() {
         return (
