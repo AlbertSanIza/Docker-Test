@@ -1,3 +1,3 @@
-"build -t react-app ."
-docker build -t react-app .
+"docker build -f Dockerfile-prod -t react-app-prod ."
+docker build -f Dockerfile-prod -t react-app-prod .
 pause
