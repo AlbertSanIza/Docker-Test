@@ -11,9 +11,9 @@ class App extends Component {
         }
     }
     handleOnClick = e => {
-        axios.get('http://api:4000/api/values').then(response => {
+        axios.get('http://' + window.location.hostname + ':4000/api/values').then(response => {
             console.log(response)
-            this.setState({apiList: this.state.apiList.push(response.data[0])})
+            this.setState({apiList: this.state.apiList.concat(response.data[0])})
         })
     }
     render() {
