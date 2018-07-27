@@ -7,7 +7,7 @@ services:
         volumes:
             - "/var/run/docker.sock:/tmp/docker.sock:ro"
     web:
-        image: react-app-prod
+        image: react-app
         deploy:
             replicas: 2
             restart_policy:
