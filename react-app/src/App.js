@@ -12,7 +12,7 @@ class App extends Component {
         }
     }
     handleOnClick = e => {
-        axios.get('http://api.' + this.state.hostname + '/api/values').then(response => {
+        axios.get('http://api.localhost/api/values').then(response => {
             this.setState({apiList: this.state.apiList.concat(response.data[0])})
         })
     }
