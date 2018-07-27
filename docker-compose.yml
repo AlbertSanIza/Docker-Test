@@ -6,6 +6,9 @@ services:
             - "80:80"
         volumes:
             - "/var/run/docker.sock:/tmp/docker.sock:ro"
+        networks:
+            - webnet
+
     web:
         image: react-app
         deploy:
@@ -16,10 +19,13 @@ services:
                 limits:
                     cpus: "0.1"
                     memory: 50M
+        expose:
+            - "80"
         environment:
             - VIRTUAL_HOST=localhost
         networks:
             - webnet
+
     api:
         image: dockertestapi
         deploy:
@@ -29,15 +35,20 @@ services:
                 limits:
                     cpus: "0.1"
                     memory: 100M
+        expose:
+            - "80"
         environment:
             - VIRTUAL_HOST=api.localhost
         networks:
             - webnet
+
     visualizer:
         image: dockersamples/visualizer:stable
         deploy:
             placement:
                 constraints: [node.role == manager]
+        expose:
+            - "8080"
         environment:
             - VIRTUAL_HOST=visualizer.localhost
         networks:
