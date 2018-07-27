@@ -7,12 +7,12 @@ class App extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            apiList: []
+            apiList: [],
+            hostname: window.location.hostname
         }
     }
     handleOnClick = e => {
-        axios.get('http://' + window.location.hostname + ':4000/api/values').then(response => {
-            console.log(response)
+        axios.get('http://api.' + this.state.hostname + '/api/values').then(response => {
             this.setState({apiList: this.state.apiList.concat(response.data[0])})
         })
     }
@@ -21,7 +21,7 @@ class App extends Component {
             <div className="App">
             <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
+            <h1 className="App-title">Welcome to React: {this.state.hostname}</h1>
             </header>
             <br/>
             <button onClick={this.handleOnClick}>Fetch Random Name</button>
