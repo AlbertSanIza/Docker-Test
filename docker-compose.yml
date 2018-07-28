@@ -2,6 +2,9 @@ version: "3"
 services:
     ginx-proxy:
         image: jwilder/nginx-proxy
+        deploy:
+            placement:
+                constraints: [node.role == manager]
         ports:
             - "80:80"
         volumes:
