@@ -24,8 +24,8 @@ services:
                     memory: 50M
         expose:
             - "80"
-            environment:
-                - VIRTUAL_HOST: "localhost"
+        environment:
+            - VIRTUAL_HOST: "localhost"
         networks:
             - webnet
 
