@@ -49,5 +49,6 @@ services:
             - net
         labels:
             - "traefik.backend=visualizer"
+            - "traefik.port=8080"
 networks:
     net:
