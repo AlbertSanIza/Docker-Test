@@ -62,30 +62,32 @@ class App extends Component {
     render() {
         return (
             <Router>
-            <div>
-            <div className="App">
-            <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React: {this.state.hostname}</h1>
-            </header>
-            <br/>
-            <button onClick={this.handleOnClick}>Fetch Random Name</button>
-            <ul className="App-list">
-            {this.state.apiList.map((y, z) => <li key={z}>{z} - {y}</li>)}
-            </ul>
-            </div>
-            <div>
-            <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/topics">Topics</Link></li>
-            </ul>
-            <hr/>
-            <Route exact path="/" component={Home}/>
-            <Route path="/about" component={About}/>
-            <Route path="/topics" component={Topics}/>
-            </div>
-            </div>
+            <Route path="/react-app" component={({match}) => (
+                <div>
+                    <div className="App">
+                        <header className="App-header">
+                        <img src={logo} className="App-logo" alt="logo" />
+                        <h1 className="App-title">Welcome to React: {this.state.hostname}</h1>
+                        </header>
+                        <br/>
+                        <button onClick={this.handleOnClick}>Fetch Random Name</button>
+                        <ul className="App-list">
+                        {this.state.apiList.map((y, z) => <li key={z}>{z} - {y}</li>)}
+                        </ul>
+                        </div>
+                        <div>
+                        <ul>
+                        <li><Link to="/react-app">Home</Link></li>
+                        <li><Link to={`${match.url}/about`}>About</Link></li>
+                        <li><Link to={`${match.url}/topics`}>Topics</Link></li>
+                        </ul>
+                        <hr/>
+                        <Route exact path="/react-app" component={Home}/>
+                        <Route path={`${match.url}/about`} component={About}/>
+                        <Route path={`${match.url}/topics`} component={Topics}/>
+                    </div>
+                </div>
+            )}/>
             </Router>
         )
     }
