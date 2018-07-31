@@ -1,17 +1,15 @@
 version: "3"
 services:
-    ginx-proxy:
-        image: jwilder/nginx-proxy
-        deploy:
-            placement:
-                constraints: [node.role == manager]
+    reverse-proxy:
+        image: traefik
+        command: --api --docker
         ports:
             - "80:80"
+            - "8080:8080"
         volumes:
-            - "/var/run/docker.sock:/tmp/docker.sock:ro"
-        networks:
-            - webnet
-
+            - /var/run/docker.sock:/var/run/docker.sock
+        networks
+            - net
     web:
         image: react-app
         deploy:
@@ -22,11 +20,11 @@ services:
                 limits:
                     cpus: "0.1"
                     memory: 50M
-        environment:
-            - VIRTUAL_HOST=docker-node-1
         networks:
-            - webnet
-
+            - net
+        labels:
+            - "traefik.backend=react-app"
+            - "traefik.frontend.rule=PathPrefixStrip:/react-app"
     api:
         image: dockertestapi
         deploy:
@@ -36,21 +34,20 @@ services:
                 limits:
                     cpus: "0.1"
                     memory: 100M
-        environment:
-            - VIRTUAL_HOST=api.docker-node-1
         networks:
-            - webnet
-
+            - net
+        labels:
+            - "traefik.backend=api"
     visualizer:
         image: dockersamples/visualizer:stable
         deploy:
             placement:
                 constraints: [node.role == manager]
-        environment:
-            - VIRTUAL_HOST=visualizer.docker-node-1
-        networks:
-            - webnet
         volumes:
             - "/var/run/docker.sock:/var/run/docker.sock"
+        networks:
+            - net
+        labels:
+            - "traefik.backend=visualizer"
 networks:
-    webnet:
+    net:
