@@ -38,7 +38,6 @@ services:
             - net
         labels:
             - "traefik.backend=api"
-    visualizer:
         image: dockersamples/visualizer:stable
         deploy:
             placement:
