@@ -58,7 +58,6 @@ class App extends Component {
                 <h1 className="App-title">Welcome to React: {this.state.hostname}</h1>
                 </header>
                 <div>
-                <hr/>
                 <Link to="/">Home</Link> <Link to="/about">About</Link> <Link to="/topics">Topics</Link>
                 <Route exact path="/" component={Home}/>
                 <Route path="/about" component={About}/>
