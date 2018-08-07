@@ -22,23 +22,13 @@ const Topic = ({ match }) => (
 const Topics = ({ match }) => (
     <div>
     <h2>Topics</h2>
-    <ul>
-    <li>
     <Link to={`${match.url}/rendering`}>
     Rendering with React
-    </Link>
-    </li>
-    <li>
-    <Link to={`${match.url}/components`}>
+    </Link> <Link to={`${match.url}/components`}>
     Components
-    </Link>
-    </li>
-    <li>
-    <Link to={`${match.url}/props-v-state`}>
+    </Link> <Link to={`${match.url}/props-v-state`}>
     Props v. State
     </Link>
-    </li>
-    </ul>
     <Route path={`${match.path}/:topicId`} component={Topic}/>
     <Route exact path={match.path} render={() => (
         <h3>Please select a topic.</h3>
@@ -68,15 +58,12 @@ class App extends Component {
                 <h1 className="App-title">Welcome to React: {this.state.hostname}</h1>
                 </header>
                 <div>
-                <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/topics">Topics</Link></li>
-                </ul>
                 <hr/>
+                <Link to="/">Home</Link> <Link to="/about">About</Link> <Link to="/topics">Topics</Link>
                 <Route exact path="/" component={Home}/>
                 <Route path="/about" component={About}/>
                 <Route path="/topics" component={Topics}/>
+                <hr/>
                 </div>
                 <br/>
                 <button onClick={this.handleOnClick}>Fetch Random Name</button>
