@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import image from './atcat.jpg'
+import cat_image from './cat.jpg'
 import styles from './styles.css'
 
-export default class ExampleComponent extends Component {
+class ExampleComponent extends Component {
     static propTypes = {
         text: PropTypes.string
     }
@@ -11,13 +11,14 @@ export default class ExampleComponent extends Component {
         const {
             text
         } = this.props
-
         return (
             <div className={styles.test}>
             Example Component: {text}
             <br/>
-            <img src={image} alt="logo"/>
+            <img src={cat_image} alt="logo"/>
             </div>
         )
     }
 }
+
+export default ExampleComponent
