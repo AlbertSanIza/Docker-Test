@@ -38,6 +38,7 @@ services:
             - net
         labels:
             - "traefik.backend=api"
-            - "traefik.frontend.rule=PathPrefix:/api"
+            - "traefik.api.frontend.rule=PathPrefix:/api"
+            - "traefik.api.frontend.rule=Host:api.localhost"
 networks:
     net:
