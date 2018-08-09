@@ -8,8 +8,10 @@
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-lib": "file:..",
+    "react-redux": "^5.0.7",
     "react-scripts": "^1.1.4",
-    "react-lib": "file:.."
+    "redux": "^4.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
