@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { HashRouter, Route, Link } from 'react-router-dom'
+import Heroes from './heroes'
 import axios from 'axios'
 import logo from './logo.svg'
 import './App.css'
@@ -12,6 +13,7 @@ const Home = () => (
 const About = () => (
     <div>
     <h2>About</h2>
+    <Heroes/>
     </div>
 )
 const Topic = ({ match }) => (
