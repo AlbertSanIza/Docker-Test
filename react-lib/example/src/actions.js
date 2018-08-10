@@ -5,5 +5,5 @@ function searchTermChanged(searchTerm) {
     }
 }
 export default {
-    searchTermChanged,
+    searchTermChanged
 }
