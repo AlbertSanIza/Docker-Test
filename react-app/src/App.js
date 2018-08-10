@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { HashRouter, Route, Link } from 'react-router-dom'
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 import Heroes from './heroes'
 import axios from 'axios'
 import logo from './logo.svg'
@@ -8,6 +9,9 @@ import './App.css'
 const Home = () => (
     <div>
     <h2>Home</h2>
+    <FormattedMessage id="app.title" defaultMessage="Welcome to React-Intl"/>
+    <br/>
+    <FormattedHTMLMessage id="app.intro"/>
     </div>
 )
 const About = () => (
