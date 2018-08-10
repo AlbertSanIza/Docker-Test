@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Heroes({char, searchTerm, searchTermChanged}) {
+function Heroes({ char, searchTerm, searchTermChanged }) {
     return (
         <section>
             <div id="header">
