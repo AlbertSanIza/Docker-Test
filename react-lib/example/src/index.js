@@ -5,7 +5,6 @@ import { createStore } from 'redux'
 import Translation from './translation'
 import reducers from './reducers/'
 import './index.css'
-import App from './App'
 
 const store = createStore(reducers)
 
