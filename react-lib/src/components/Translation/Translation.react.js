@@ -1,13 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { FormattedMessage } from 'react-intl'
 
-function Translation({ languageChanged }) {
+function Translation({ language, languageChanged }) {
     return (
         <div>
             <FormattedMessage id="app.title"/>
             <br/>
-            <button onClick={e => languageChanged('en') }>EN</button>
-            <button onClick={e => languageChanged('es') }>ES</button>
+            <button onClick={ () => languageChanged('en') }>EN</button>
+            <button onClick={ () => languageChanged('es') }>ES</button>
+            <b>Current: { language }</b>
         </div>
     )
 }
