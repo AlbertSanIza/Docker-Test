@@ -4,6 +4,7 @@ const initialState = {
     char: Char,
     searchTerm: ''
 }
+
 export default function char(state = initialState, action) {
     switch(action.type) {
         case 'SEARCH_INPUT_CHANGED':
