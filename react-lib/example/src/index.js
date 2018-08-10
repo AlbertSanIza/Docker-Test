@@ -5,7 +5,7 @@ import { createStore } from 'redux'
 import { IntlProvider, addLocaleData } from "react-intl"
 import locale_en from 'react-intl/locale-data/en'
 import locale_es from 'react-intl/locale-data/es'
-import reducers from './reducers'
+import reducers from './reducers/'
 import './index.css'
 import App from './App'
 import messages_en from "./translations/en.json"
