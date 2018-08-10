@@ -20,14 +20,16 @@ const char = (state = initialState, action) => {
     }
 }
 
-const language = (state = {}, action) => {
+const languageState = {
+    language: 'en'
+}
+
+const language = (state = languageState, action) => {
     switch(action.type) {
         case 'LANGUAGE_CHANGE':
-        const { searchTerm } = action.payload
+        const { language } = action.payload
         return {
-            ...state, searchTerm: searchTerm, char: searchTerm ? Char.filter(
-                char => char.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1
-            ) : Char
+            ...state, language: language
         }
         default:
         return state
