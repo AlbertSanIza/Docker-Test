@@ -1,13 +1,13 @@
 import { connect } from 'react-redux'
 import { Translation } from 'react-lib'
 
-function changeLanguage(language) {
+function languageChanged(language) {
     return {
         type: 'LANGUAGE_CHANGE',
-        language: language
+        payload: { language }
     }
 }
 
-export default connect(store => store, {
-    changeLanguage
+export default connect(store => store.language, {
+    languageChanged
 })(Translation)
