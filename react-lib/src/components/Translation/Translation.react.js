@@ -5,7 +5,7 @@ class Translation extends Component {
     render() {
         return (
             <div>
-                <FormattedMessage id="app.title" defaultMessage="__Welcome to React-Intl__"/>
+                <FormattedMessage id="app.title"/>
                 <br/>
                 <button>EN</button>
                 <button>ES</button>
