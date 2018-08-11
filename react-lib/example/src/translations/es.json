@@ -1,4 +1,5 @@
 {
     "app.title": "Bienvenido a React-INTL",
-    "app.intro": "Para iniciar, edita <code>src/App.js</code> guarda y recarga."
+    "app.intro": "Para iniciar, edita <code>src/App.js</code> guarda y recarga.",
+    "app.dctitle": "Lista de grandes super heroes de DC"
 }
