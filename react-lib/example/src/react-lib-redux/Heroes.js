@@ -8,6 +8,6 @@ function searchTermChanged(searchTerm) {
     }
 }
 
-export default connect(store => store.char, {
+export default connect(store => store, {
     searchTermChanged
 })(Heroes)
