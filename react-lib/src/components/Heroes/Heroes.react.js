@@ -1,11 +1,14 @@
 import React from 'react'
+import { FormattedMessage } from 'react-intl'
 
-function Heroes({ char, searchTerm, searchTermChanged }) {
+function Heroes({ char, searchTermChanged }) {
     return (
         <section>
             <div id="header">
                 <h1>DC Superheroes</h1>
-                <h3>A List of Major DC Superheroes</h3>
+                <h3>
+                    <FormattedMessage id="app.title"/>
+                </h3>
             </div>
             <form>
                 <div className="search">
@@ -13,7 +16,7 @@ function Heroes({ char, searchTerm, searchTermChanged }) {
                         type="text"
                         name="search"
                         placeholder="Search"
-                        value={searchTerm}
+                        value={char.searchTerm}
                         onChange={e => searchTermChanged(e.target.value)}
                         />
                 </div>
@@ -28,7 +31,7 @@ function Heroes({ char, searchTerm, searchTermChanged }) {
                     </tr>
                 </thead>
                 <tbody>
-                    {char.map(curChar => (
+                    {char.char.map(curChar => (
                         <tr key={curChar.name}>
                             <td>{curChar.name}</td>
                             <td>{curChar.alter_ego}</td>
