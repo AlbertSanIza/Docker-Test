@@ -1,5 +1,5 @@
 import React from 'react'
-import { FormattedMessage } from 'react-intl'
+import { FormattedMessage, FormattedDate } from 'react-intl'
 
 function Translation({ language, languageChanged }) {
     return (
@@ -9,6 +9,8 @@ function Translation({ language, languageChanged }) {
             <button onClick={ () => languageChanged('en') }>EN</button>
             <button onClick={ () => languageChanged('es') }>ES</button>
             <b>Current: { language }</b>
+            <br/>
+            <FormattedDate value={new Date()}/>
         </div>
     )
 }
